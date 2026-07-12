@@ -1,0 +1,32 @@
+{
+  "events": [
+    {
+      "title": "Conferencia de IA ",
+      "description": "Conferencia sobre inteligencia artificial aplicada a la educación.",
+      "date": "2026-07-20",
+      "capacity": 50,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "Taller de React",
+      "description": "Taller práctico de desarrollo frontend con React.",
+      "date": "2026-07-25",
+      "capacity": 30
+    }
+  ],
+  "participants": [
+    {
+      "id": 1,
+      "name": "Ana Gómez",
+      "email": "ana@universidad.edu",
+      "eventId": 1
+    },
+    {
+      "id": 2,
+      "name": "Carlos Pérez",
+      "email": "carlos@universidad.edu",
+      "eventId": 1
+    }
+  ]
+}
