@@ -24,7 +24,7 @@ Proyecto para la asignatura de Desarrollo Frontend. Una plataforma web hecha con
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/gestor-eventos-universidad.git
+   git clone https://github.com/yairherrera/gestor-eventos-universidad.git
    cd gestor-eventos-universidad
 
 2. Instala dependencias:
