@@ -64,7 +64,10 @@ const EventDetails = () => {
                 {participants.map(p => (
                   <div key={p.id} className="participant-item">
                     <div className="participant-avatar">{getInitials(p.name)}</div>
-                    <div><div className="fw-semibold">{p.name}</div><small className="text-muted">{p.email}</small></div>
+                    <div>
+                      <div className="fw-semibold" data-testid="participant-name">{p.name}</div>
+                      <small className="text-muted" data-testid="participant-email">{p.email}</small>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -76,9 +79,23 @@ const EventDetails = () => {
             {isFull && <Alert variant="warning" className="alert-custom"><i className="bi bi-exclamation-triangle me-2"></i>Este evento ya ha alcanzado su capacidad máxima.</Alert>}
             <Form onSubmit={handleRegister}>
               <Row>
-                <Col md={5}><Form.Group className="mb-3"><Form.Label className="form-label">Nombre completo</Form.Label><Form.Control type="text" value={name} onChange={e=>setName(e.target.value)} placeholder="Ej. María López" className="form-control-modern" disabled={isFull} required /></Form.Group></Col>
-                <Col md={5}><Form.Group className="mb-3"><Form.Label className="form-label">Correo electrónico</Form.Label><Form.Control type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="ejemplo@universidad.edu" className="form-control-modern" disabled={isFull} required /></Form.Group></Col>
-                <Col md={2} className="d-flex align-items-end"><Button variant="success" type="submit" disabled={isFull || submitting} className="btn-gradient-success w-100">{submitting ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : <><i className="bi bi-check-circle me-1"></i>Inscribir</>}</Button></Col>
+                <Col md={5}>
+                  <Form.Group className="mb-3">
+                    <Form.Label htmlFor="detailName" className="form-label">Nombre completo</Form.Label>
+                    <Form.Control id="detailName" type="text" value={name} onChange={e=>setName(e.target.value)} placeholder="Ej. María López" className="form-control-modern" disabled={isFull} required />
+                  </Form.Group>
+                </Col>
+                <Col md={5}>
+                  <Form.Group className="mb-3">
+                    <Form.Label htmlFor="detailEmail" className="form-label">Correo electrónico</Form.Label>
+                    <Form.Control id="detailEmail" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="ejemplo@universidad.edu" className="form-control-modern" disabled={isFull} required />
+                  </Form.Group>
+                </Col>
+                <Col md={2} className="d-flex align-items-end">
+                  <Button variant="success" type="submit" disabled={isFull || submitting} className="btn-gradient-success w-100">
+                    {submitting ? <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> : <><i className="bi bi-check-circle me-1"></i>Inscribir</>}
+                  </Button>
+                </Col>
               </Row>
             </Form>
           </div>
@@ -87,4 +104,5 @@ const EventDetails = () => {
     </Container>
   );
 };
+
 export default EventDetails;

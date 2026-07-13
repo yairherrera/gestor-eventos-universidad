@@ -14,7 +14,7 @@ import './index.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <EventProvider>
         <div className="d-flex flex-column min-vh-100">
           <Header />

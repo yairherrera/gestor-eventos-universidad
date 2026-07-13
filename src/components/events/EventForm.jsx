@@ -36,24 +36,24 @@ const EventForm = () => {
             <Card.Body>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label">Título del evento</Form.Label>
-                  <Form.Control type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Ej. Conferencia sobre Inteligencia Artificial" className="form-control-modern" required />
+                  <Form.Label htmlFor="title" className="form-label">Título del evento</Form.Label>
+                  <Form.Control id="title" type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Ej. Conferencia sobre Inteligencia Artificial" className="form-control-modern" required />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                  <Form.Label className="form-label">Descripción</Form.Label>
-                  <Form.Control as="textarea" rows={4} name="description" value={formData.description} onChange={handleChange} placeholder="Describe el evento, objetivos, ponentes, etc." className="form-control-modern" required />
+                  <Form.Label htmlFor="description" className="form-label">Descripción</Form.Label>
+                  <Form.Control id="description" as="textarea" rows={4} name="description" value={formData.description} onChange={handleChange} placeholder="Describe el evento, objetivos, ponentes, etc." className="form-control-modern" required />
                 </Form.Group>
                 <Row>
                   <Col md={6}>
                     <Form.Group className="mb-3">
-                      <Form.Label className="form-label">Fecha</Form.Label>
-                      <Form.Control type="date" name="date" value={formData.date} onChange={handleChange} className="form-control-modern" required />
+                      <Form.Label htmlFor="date" className="form-label">Fecha</Form.Label>
+                      <Form.Control id="date" type="date" name="date" value={formData.date} onChange={handleChange} className="form-control-modern" required />
                     </Form.Group>
                   </Col>
                   <Col md={6}>
                     <Form.Group className="mb-3">
-                      <Form.Label className="form-label">Capacidad (número de participantes)</Form.Label>
-                      <Form.Control type="number" name="capacity" value={formData.capacity} onChange={handleChange} placeholder="50" min="1" className="form-control-modern" required />
+                      <Form.Label htmlFor="capacity" className="form-label">Capacidad (número de participantes)</Form.Label>
+                      <Form.Control id="capacity" type="number" name="capacity" value={formData.capacity} onChange={handleChange} placeholder="50" min="1" className="form-control-modern" required />
                     </Form.Group>
                   </Col>
                 </Row>
@@ -71,4 +71,5 @@ const EventForm = () => {
     </Container>
   );
 };
+
 export default EventForm;

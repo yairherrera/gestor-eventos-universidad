@@ -44,7 +44,7 @@ const EventList = () => {
                     <div className="d-flex justify-content-center gap-2 flex-wrap">
                       <Button as={Link} to={`/events/${event.id}`} variant="info" size="sm" className="btn-gradient-primary"><i className="bi bi-eye"></i></Button>
                       <Button as={Link} to={`/events/edit/${event.id}`} variant="warning" size="sm" className="btn-outline-custom"><i className="bi bi-pencil"></i></Button>
-                      <Button variant="danger" size="sm" onClick={() => handleDelete(event.id)} className="btn-gradient-danger"><i className="bi bi-trash"></i></Button>
+                      <Button variant="danger" size="sm" onClick={() => handleDelete(event.id)} className="btn-gradient-danger" aria-label="Eliminar" ><i className="bi bi-trash"></i></Button>
                     </div>
                   </td>
                 </tr>

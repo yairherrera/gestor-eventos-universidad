@@ -12,8 +12,11 @@ const TestComponent = () => {
 };
 
 test('carga eventos al montar', async () => {
-  api.get.mockResolvedValueOnce({ data: [{ id: 1, title: 'Evento de prueba' }] });
-  api.get.mockResolvedValueOnce({ data: [] });
+  api.get.mockImplementation((url) => {
+    if (url === '/events') return Promise.resolve({ data: [{ id: 1, title: 'Evento de prueba' }] });
+    if (url === '/participants') return Promise.resolve({ data: [] });
+    return Promise.reject(new Error('Not found'));
+  });
 
   render(
     <EventProvider>
